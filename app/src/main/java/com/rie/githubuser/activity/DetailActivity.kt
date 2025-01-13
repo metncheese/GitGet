@@ -58,13 +58,13 @@ class DetailActivity : AppCompatActivity() {
             if (users == null) {
                 binding.fabFavorite.setImageDrawable(getDrawable(R.drawable.ic_unfavorite))
                 binding?.fabFavorite?.setOnClickListener {
-                    var user = ItemsSearch(username, avatar)
+                    val user = ItemsSearch(username, avatar)
                     detailViewModel.insert(user)
                 }
             } else {
                 binding.fabFavorite.setImageDrawable(getDrawable(R.drawable.ic_favorite))
                 binding?.fabFavorite?.setOnClickListener {
-                    var user = ItemsSearch(username, avatar)
+                    val user = ItemsSearch(username, avatar)
                     detailViewModel.delete(user)
                 }
             }

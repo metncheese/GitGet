@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
+import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -87,11 +88,5 @@ class FollowFragment : Fragment() {
         const val ARG_SECTION_NUMBER = "section_number"
         const val USERNAME = "username"
     }
-    private fun showLoading(isLoading: Boolean) {
-        if (isLoading) {
-            binding.progressBar.visibility = View.VISIBLE
-        } else {
-            binding.progressBar.visibility = View.GONE
-        }
-    }
+    private fun showLoading(isLoading: Boolean) = binding.progressBar.isVisible == isLoading
 }
